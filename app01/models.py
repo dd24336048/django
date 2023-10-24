@@ -1,34 +1,72 @@
 
 # Create your models here.
 from django.db import models
+class EnglishOptional(models.Model):
+    topic_number = models.TextField()
+    answer_A = models.TextField()
+    answer_B = models.TextField()
+    answer_C = models.TextField()
+    answer_D = models.TextField()
+    answer = models.CharField(max_length=255)
+    year = models.IntegerField()
 
+class EnglishOptionalNumber3(models.Model):
+    topic_number = models.TextField()
+    answer_A = models.TextField()
+    answer_B = models.TextField()
+    answer_C = models.TextField()
+    answer_D = models.TextField()
+    answer_E = models.TextField()
+    answer_F = models.TextField()
+    answer_G = models.TextField()
+    answer_H = models.TextField()
+    answer_I = models.TextField()
+    answer_J = models.TextField()
+    answer = models.CharField(max_length=255)
+    year = models.IntegerField()
 
-# 建立資料庫
-class EnglishWord(models.Model):
-    word = models.CharField(max_length=100)
-    meaning = models.TextField()
-
-    def __str__(self):
-        return self.word
-#單選
-class Academic(models.Model):
+class EnglishOptionalNumber4(models.Model):
+    topic_number = models.TextField()
     topic = models.TextField()
-    optionA = models.TextField()
-    optionB = models.TextField()
-    optionC = models.TextField()
-    optionD = models.TextField()
-    answer = models.TextField()
-    year = models.CharField(max_length=10)
-    topic_number = models.CharField(max_length=10)
+    answer_A = models.TextField()
+    answer_B = models.TextField()
+    answer_C = models.TextField()
+    answer_D = models.TextField()
+    answer = models.CharField(max_length=255)
+    year = models.IntegerField()
 
-    def __str__(self):
-        return f"Topic: {self.topic}, Answer: {self.answer}, Year: {self.year}, Topic Number: {self.topic_number}"
-#試卷表
-class Testpaper(models.Model):
-    topic = models.CharField('題目',max_length=40,unique=True)
-    pid = models.ManyToManyField(Academic)
-    time = models.IntegerField('考試時長',help_text = '分鐘')
-#成績紀錄
-class Record(models.Model):
-    grade = models.FloatField('成績')
-    time = models.DateTimeField('考試時間',blank=True,null=True)
+class EnglishOptionalNumber5(models.Model):
+    topic_number = models.TextField()
+    topic = models.TextField()
+    answer_A = models.TextField()
+    answer_B = models.TextField()
+    answer_C = models.TextField()
+    answer_D = models.TextField()
+    answer = models.CharField(max_length=255)
+    year = models.IntegerField()
+
+class EnglishTopic(models.Model):
+    topic_number = models.TextField()
+    topic = models.TextField()
+    answer_A = models.TextField()
+    answer_B = models.TextField()
+    answer_C = models.TextField()
+    answer_D = models.TextField()
+    answer = models.CharField(max_length=255)
+    year = models.IntegerField()
+
+class EnglishWord(models.Model):
+    word = models.TextField()
+    phonetic_symbols = models.TextField()
+    part_of_speech = models.TextField()
+    explain = models.TextField()
+
+class OptionalTopic(models.Model):
+    topic_number = models.TextField()
+    topic = models.TextField()
+    year = models.IntegerField()
+
+class OptionalTopicNumber4(models.Model):
+    topic_number = models.TextField()
+    topic = models.TextField()
+    year = models.IntegerField()
